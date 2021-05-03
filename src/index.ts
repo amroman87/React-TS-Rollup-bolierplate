@@ -1,4 +1,4 @@
-export { Component } from './component/component'
+export { MyCustomeComponent } from './custom.element/mycustomeelement'
 export { someFunction } from "./common/someFunction";
 
 enum EnumTest {
