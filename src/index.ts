@@ -1,7 +1,7 @@
 export { Component } from './component/component'
 export { someFunction } from "./common/someFunction";
 
-const enum EnumTest {
+enum EnumTest {
     VALUE1 = 1,
     VALUE2 = 2,
   }
