@@ -3,6 +3,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import globals from 'rollup-plugin-node-globals';
+import serve from 'rollup-plugin-serve';
+import livereload from 'rollup-plugin-livereload';
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const name = 'myModuleName';
@@ -20,6 +22,16 @@ const plugins = [
      babelHelpers: 'bundled',
      include: ['src/**/*'],
    }),
+   serve({
+    open: true,
+    verbose: true,
+    contentBase: ['', 'dist'],
+    historyApiFallback: true,
+    host: 'localhost',
+    port: 3000
+  }),
+  livereload({
+    watch: 'dist'})
 ];
 
 export default [
