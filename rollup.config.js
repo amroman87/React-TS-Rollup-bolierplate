@@ -9,24 +9,30 @@ const plugins = [
     typescript: require("typescript"),
   }),
 ];
+const external = [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+  ];
 
 export default [
   {
-    input: 'src/index.ts',
+    input,
     output: {
-      file: 'dist/index.js',
+      file: pkg.module,
       format: "esm",
       sourcemap: true,
     },
     plugins,
+    external,
   },
   {
-    input: 'src/index.ts',
+    input,
     output: {
-      file: 'dist/index.js',
+      file: pkg.main,
       format: "cjs",
       sourcemap: true,
     },
     plugins,
+    external,
   },
 ];
