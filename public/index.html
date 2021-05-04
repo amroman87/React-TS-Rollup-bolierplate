@@ -31,7 +31,14 @@
     </header>
 
     <main>
-        <my-custom-component></my-custom-component>
+        <script>
+            function myFunction() {
+                document.getElementById("mycustomcomponent").title = document.getElementById("inputelement").value;
+            }
+        </script>
+        <my-custom-component id="mycustomcomponent" title="hola"></my-custom-component>
+        <input id="inputelement">
+        <button onClick="myFunction()">Click me</button>
         <script src="./dist/index.iife.js"></script>
     </main>
 </body>

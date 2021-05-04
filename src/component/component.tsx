@@ -1,9 +1,14 @@
 import React from "react";
 
-export const Component: React.FC = () => {
+interface Props {
+  title: string | undefined;
+}
+
+export const Component: React.FC<Props> = (props) => {
+  const { title } = props;
   return (
     <div>
-      <h1>This is my MFE</h1>
+      <h1 title={title}>{title}</h1>
     </div>
   );
 };
